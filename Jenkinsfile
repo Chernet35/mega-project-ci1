@@ -105,7 +105,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'git', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
                         sh '''
                             # Clone the Mega-Project-CD repository
-                            git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/devops-methodology/Mega-Project-CD.git
+                            git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/devops-methodology/mega-project-cd
                             
                             # Update the image tag in the manifest.yaml file
                             cd Mega-Project-CD
