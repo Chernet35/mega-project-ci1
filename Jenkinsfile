@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/kamasingh/mega-project-ci.git'
+                git branch: 'main', url: 'https://github.com/devops-methodology/mega-project-ci.git'
             }
         }
         
@@ -74,7 +74,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred') {
-                        sh "docker build -t adijaiswal/bankapp:$IMAGE_TAG ."
+                        sh "docker build -t premd91/bankapp:$IMAGE_TAG ."
                     }
                 }
             }
