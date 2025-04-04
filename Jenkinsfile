@@ -108,7 +108,7 @@ pipeline {
                             git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/devops-methodology/mega-project-cd
                             
                             # Update the image tag in the manifest.yaml file
-                            cd Mega-Project-CD
+                            cd mega-project-cd
                             sed -i "s|premd91/bankapp:.*|premd91/bankapp:${IMAGE_TAG}|" Manifest/manifest.yaml
                             
                             # Confirm changes
