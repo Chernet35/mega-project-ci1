@@ -82,7 +82,7 @@ pipeline {
         
         stage('Scan Image') {
             steps {
-                sh "trivy image --format table -o image-report.html adijaiswal/bankapp:$IMAGE_TAG"
+                sh "trivy image --format table -o image-report.html premd91/bankapp:$IMAGE_TAG"
             }
         }
         
@@ -90,7 +90,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred') {
-                        sh "docker push adijaiswal/bankapp:$IMAGE_TAG"
+                        sh "docker push premd91/bankapp:$IMAGE_TAG"
                     }
                 }
             }
